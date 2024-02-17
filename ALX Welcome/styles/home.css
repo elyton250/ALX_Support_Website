@@ -1,5 +1,5 @@
 /* header styles */
-header {
+.headers {
     display: flex;
     align-items: center;
     height: 100px;
@@ -30,9 +30,8 @@ header {
     align-items: center;
     margin-right: 50px;
 }
-.master-card {
+/*.master-card {
     /* border: 1px solid red; */
-}
 /* .support {
     border: 1px solid red;
     padding: 0 5px 0 5px;
@@ -61,7 +60,7 @@ h1 {
 }
 
 
-p {
+/* p {
     padding-left: 300px;
     padding-right: 300px;
     font-size: x-large;
@@ -70,9 +69,9 @@ p {
     color:#ffffff;
     text-align: center;
     /* z-index: 1; */
-    background-color: black;
+    /* background-color: black;
     opacity: 0.5;
-}
+} */ */
 nav {
     align-items: center;
 }
@@ -95,8 +94,8 @@ video {
 .icon_space {
     display: block;
     align-items: safe;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     background-color: #002B56;
     color: #ffffff;
     padding: 20px;
@@ -108,8 +107,8 @@ video {
 
 .icon {
     padding: 30px;
-    height: 100px;
-    width: 100px;   
+    height: 150px;
+    width: 150px;   
 }
 .text {
     color:#ADD8E6;
@@ -142,11 +141,6 @@ span {
     justify-content: center;
 }
 
-footer {
-    height: 100px;
-    background-color: #002B56;
-}
-
 .section-intro, h1, p {
     /* border: 1px solid red; */
     align-items: center;
@@ -170,6 +164,7 @@ footer {
     display: flex;
     justify-content: center;
 }
+
 /* responsiveness for 400px */
 @media screen and (max-width: 400px) {
     .intro {
