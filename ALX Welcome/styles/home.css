@@ -4,8 +4,9 @@ header {
     align-items: center;
     height: 100px;
     background-color: rgb(239, 228, 228);
-    opacity: 0.8;
+    opacity: 1;
     justify-content: space-between; 
+  
 }
 .logo{
    
@@ -24,13 +25,13 @@ header {
     color: black;
 }
 .header-icon {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     align-items: center;
     margin-right: 50px;
 }
 .master-card {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 /* .support {
     border: 1px solid red;
@@ -101,6 +102,7 @@ video {
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
+    opacity:0.9;
     
 }
 
@@ -150,8 +152,24 @@ footer {
     align-items: center;
 
 }
-
-
+.Meet-our-team{
+   background-color: #2172c4;
+   height: 500px;
+   width: 100%;
+   opacity: 0.9;
+}
+.h2{
+    border: red 1px solid;
+    color:#ffffff;
+    font-family: Poppins;
+    font-size: large;
+    font-weight: 500;
+    margin-left: 30%;
+    margin-right: 30%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 /* responsiveness for 400px */
 @media screen and (max-width: 400px) {
     .intro {
@@ -163,4 +181,5 @@ footer {
         color:#ffffff;
         text-align: center;
     }
+
 }
