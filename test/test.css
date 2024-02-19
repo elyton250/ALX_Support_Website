@@ -17,14 +17,22 @@
 .behind {
   /* box-sizing: border-box; */
   background-color: #002B56;
-  min-height: 80vh;
+  min-height: 60vh;
   /* position: absolute; */
 }
-.behind h1,p {
+.behind h1 {
   color: white;
   font-family: 'Poppins';
   text-align: center;
-  padding: 40px 0 20px 0;
+}
+
+.behind p {
+  color: white;
+  font-family: 'Poppins';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
 }
 
 .wrapper {
