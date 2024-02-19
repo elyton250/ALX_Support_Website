@@ -1,77 +1,67 @@
 /* header styles */
-.headers {
-    display: flex;
-    align-items: center;
+.menu {
+    font-family: 'Poppins', sans-serif;
     height: 100px;
     background-color: rgb(239, 228, 228);
     opacity: 1;
-    justify-content: space-between; 
-  
-}
-.logo{
-   
-    justify-content:space-between;
     align-items: center;
-    padding:0;
-    margin:0;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%; */
 }
-.logo h1 {
-    /* border: 1px red solid; */
-    padding:0;
-    margin:0;
-    font-size: 1.3rem;
-    font-weight: bold;
-    font-family: Poppins;
+.logo {
+    display: flex;
+    align-items: center;
+}
+.alx-logo {
+    margin-left: 10%;
+    height: 100px;
+    width: 100px;
+}
+.master-card-logo {
+    margin-left: 60%;
+    height: 90px;
+    width: 90px;
+}
+
+/* .icons, .logo, .header-icon {
+    border: 1px solid red;
+} */
+.header-icon ul {
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.header-icon ul li {
+    margin: 0;
+    list-style: none;
+}
+.header-icon ul li a {
+    margin: 0;
+    text-decoration: none;
+    /* border: 1px solid red; */
     color: black;
 }
-.header-icon {
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    margin-right: 50px;
+.header-icon ul li a:hover {
+    color:#05F283;
+    
 }
-/*.master-card {
-    /* border: 1px solid red; */
-/* .support {
-    border: 1px solid red;
-    padding: 0 5px 0 5px;
-    font-size: 1rem;
-    margin: 0 125px 0 5px;
-} */
-.logo {
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: flex-start;
+.header-icon ul li  a:active {
+    text-decoration: underline;
 }
-.header-icon nav {
-    padding: 0 20px 0 20px;
-}
-body {
-    background-color: #E2F0F6;
+/* end of header style */
+
+
+* {
+    /* background-color: #E2F0F6; */
     margin: 0;
     padding: 0;
 }
-
-h1 {
-    padding-left: 500px;
-    padding-right: 500px;
-    font-family: Poppins;
-    color:white;
-}
-
-
-/* p {
-    padding-left: 300px;
-    padding-right: 300px;
-    font-size: x-large;
-    font-weight: lighter;
-    font-family: Poppins;
-    color:#ffffff;
-    text-align: center;
-    /* z-index: 1; */
-    /* background-color: black;
-    opacity: 0.5;
-} */ */
 nav {
     align-items: center;
 }
@@ -102,7 +92,6 @@ video {
     margin: 10px;
     border-radius: 10px;
     opacity:0.9;
-    
 }
 
 .icon {
@@ -112,7 +101,7 @@ video {
 }
 .text {
     color:#ADD8E6;
-    font-family: Poppins;
+    font-family: 'Poppins';
 }
 button {
     display: inline-block;
@@ -155,7 +144,7 @@ span {
 .h2{
     border: red 1px solid;
     color:#ffffff;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-size: large;
     font-weight: 500;
     margin-left: 30%;
@@ -164,6 +153,7 @@ span {
     display: flex;
     justify-content: center;
 }
+
 
 /* responsiveness for 400px */
 @media screen and (max-width: 400px) {

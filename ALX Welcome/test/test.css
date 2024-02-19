@@ -15,23 +15,18 @@
   background: linear-gradient(to left top, #031A9A, #8B53FF);
 } */
 .behind {
+  /* box-sizing: border-box; */
   background-color: #002B56;
-  height: 600px;
-  position: absolute;
+  min-height: 80vh;
+  /* position: absolute; */
 }
-.behind h1 {
+.behind h1,p {
   color: white;
   font-family: 'Poppins';
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  padding: 40px 0 20px 0;
 }
-.behind p {
-  color: white;
-  font-family: 'Poppins';
-  display: flex;
-  justify-content: center;
-  padding-top: 70px;
-}
+
 .wrapper {
   width: 100%;
   position: relative;
@@ -104,7 +99,7 @@
   border-radius: 8px;
 }
 .carousel .card .img {
-  background: #8B53FF;
+  /* background: #8B53FF; */
   height: 148px;
   width: 148px;
   border-radius: 50%;
