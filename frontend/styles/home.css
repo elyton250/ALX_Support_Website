@@ -1,0 +1,175 @@
+/* header styles */
+.menu {
+    font-family: 'Poppins', sans-serif;
+    height: 100px;
+    background-color: rgb(239, 228, 228);
+    opacity: 1;
+    align-items: center;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%; */
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo a{
+    color: black;
+    text-decoration: none;
+}
+
+.alx-logo {
+    margin-left: 10%;
+    height: 100px;
+    width: 100px;
+}
+.master-card-logo {
+    margin-left: 60%;
+    height: 90px;
+    width: 90px;
+}
+
+/* .icons, .logo, .header-icon {
+    border: 1px solid red;
+} */
+.header-icon ul {
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.header-icon ul li {
+    margin: 0;
+    list-style: none;
+}
+.header-icon ul li a {
+    margin: 0;
+    text-decoration: none;
+    /* border: 1px solid red; */
+    color: black;
+}
+.header-icon ul li a:hover {
+    color:grey;
+    
+}
+.header-icon ul li  a:active {
+    text-decoration: underline;
+}
+/* end of header style */
+
+
+* {
+    /* background-color: #E2F0F6; */
+    margin: 0;
+    padding: 0;
+}
+nav {
+    align-items: center;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.icon_background {
+    background-color: black;
+    background-image: url(../Images/bean.jpg);
+}
+.icon_space {
+    display: block;
+    align-items: safe;
+    width: 300px;
+    height: 300px;
+    background-color: #002B56;
+    color: #ffffff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    /* opacity:0.9; */
+}
+
+.icon {
+    padding: 30px;
+    height: 150px;
+    width: 150px;   
+}
+.text {
+    color:#ADD8E6;
+    font-family: 'Poppins';
+}
+button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight:400;
+    text-align: center;
+    cursor: pointer;
+    border:#002B56;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #05F283;
+    color: #002B56;
+  }
+  
+  button:hover {
+    background-color: #05F223;
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(54, 226, 20, 0.8);
+  }
+span {
+    display: flex;
+    justify-content: center;
+}
+
+.section-intro, h1, p {
+    /* border: 1px solid red; */
+    align-items: center;
+
+}
+.Meet-our-team{
+   background-color: #2172c4;
+   height: 500px;
+   width: 100%;
+   opacity: 0.9;
+}
+.h2{
+    border: red 1px solid;
+    color:#ffffff;
+    font-family: 'Poppins';
+    font-size: large;
+    font-weight: 500;
+    margin-left: 30%;
+    margin-right: 30%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* responsiveness for 400px */
+@media screen and (max-width: 400px) {
+    .intro {
+        padding-left: 80px;
+        padding-right: 80px;
+        font-size: x-large;
+        font-weight: lighter;
+        font-family: Poppins;
+        color:#ffffff;
+        text-align: center;
+    }
+
+}

@@ -1,0 +1,11 @@
+.wifi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    text-align: center;
+}
+.wifi h1{
+    font-family: 'poppins';
+    background-color:white
+}
