@@ -15,6 +15,7 @@ class Student(db.Model):
     email = db.Column(db.String(100))
     phone = db.Column(db.String(20))
     course_id = db.Column(db.Integer, db.ForeignKey('course.id'))
+    password=db.Column(db.String(256))
 
 class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)

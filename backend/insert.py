@@ -8,7 +8,8 @@ def add_students(num_students):
             l_name='Lastname{}'.format(_),
             email='student{}@example.com'.format(_),
             phone='123456789{}'.format(random.randint(0, 9)),
-            course_id=random.randint(1, 5)
+            course_id=random.randint(1, 5),
+            password='password'
         )
         db.session.add(student)
     db.session.commit()
