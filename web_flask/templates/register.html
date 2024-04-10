@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+    {% block content %}
+    <h2>User Sign Up</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0]|safe }}<a href="{{ url_for('auth.login') }}"></a>
+            </div>
+        {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="password" required><br><br>
+        
+        <label for="re-password">Repeat Your Password:</label><br>
+        <input type="password" id="password" name="re-password" placeholder="re-type your password" required><br><br>
+        
+        <input type="submit" value="Sign Up">
+    </form>
+    {% endblock %}
