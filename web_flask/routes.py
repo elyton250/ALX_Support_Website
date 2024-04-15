@@ -30,6 +30,22 @@ def about():
 def profile():
     return render_template('profile.html', name=current_user.l_name)
 
+
+@main.route('/dashboard', strict_slashes=False)
+@login_required
+def dashboard():
+    return render_template('dashboard.html', name=current_user.l_name)
+# new routes I added
+@main.route('/find-peer', strict_slashes=False)
+@login_required
+def find_peer():
+    return render_template('find-peer.html', name=current_user.l_name)
+
+@main.route('/wifi', strict_slashes=False)
+@login_required
+def wifi():
+    return render_template('wifi.html', name=current_user.l_name)
+
 @auth.route('/login', strict_slashes=False)
 def login():
     return render_template('login.html')
@@ -49,7 +65,7 @@ def login_post():
             flash('Please check your login details and try again.')
             return redirect(url_for('auth.login'))
         login_user(student, remember=remember)
-        return redirect(url_for('main.profile'))
+        return redirect(url_for('main.dashboard')) #changed from dashboard to profile
 
 @auth.route('/register', strict_slashes=False)
 def register():

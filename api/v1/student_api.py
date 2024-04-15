@@ -1,5 +1,4 @@
-# from datetime import datetime
-from flask import Flask
+from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 from os import getenv
@@ -20,22 +19,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://{}:{}@{}/{}'.format(
 """initializing database"""
 db = SQLAlchemy(app)
 
-# class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     username = db.Column(db.String(100), nullable=False)
-#     email = db.Column(db.String(100), nullable=False, unique=True)
-#     password = db.Column(db.String(100))
-#     image_file = db.Column(db.String(50), nullable=False, default='default.png')
-#     sermons = db.relationship('Sermon', backref='author', lazy=True)
-
-# class Sermon(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     title = db.Column(db.String(100), nullable=False)
-#     verse = db.Column(db.String(50), nullable=False)
-#     audio_file = db.Column(db.String(50), nullable=False, unique=True)
-#     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow().date)
-#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
 class Student(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     f_name = db.Column(db.String(50), nullable=False)
@@ -49,16 +32,38 @@ class Student(UserMixin, db.Model):
 
 class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    course_name = db.Column(db.String(100), nullable=False)
+    course_name = db.Column(db.String(100), nullable=False, unique=True)
     students = db.relationship('Student', backref='course', lazy=True)
 
 """create tables in the database"""
 with app.app_context():
     db.create_all()
+"""this an api for all students in the database"""
 
-from routes import *
+@app.route('/students', methods=['GET'])
+def get_students():
+    students = Student.query.all()
+    output = [{'id': student.id,
+               'first_name': student.f_name,
+               'last_name': student.l_name,
+               'email': student.email,
+               'phone': student.phone,
+               'course_id': student.course_id,
+               'cohort': student.cohort} for student in students]
+    return jsonify({'students': output})
 
 
-if __name__ == "__main__":
-    """create tables in database"""
-    app.run(host='0.0.0.0', port=8000, debug=True)
+@app.route('/courses', methods=['GET'])
+def get_courses():
+    courses = Course.query.all()
+    output = []
+    for course in courses:
+        course_data = {
+            'id': course.id,
+            'course_name': course.course_name
+        }
+        output.append(course_data)
+    return jsonify({'courses': output})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
