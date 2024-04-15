@@ -19,7 +19,7 @@ def load_user(user_id):
 
 @main.route('/', strict_slashes=False)
 def home():
-    return render_template('index.html')
+    return render_template('landing.html')
 
 @main.route('/about', strict_slashes=False)
 def about():

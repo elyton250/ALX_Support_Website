@@ -16,6 +16,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://{}:{}@{}/{}'.format(
          getenv("DB_HOST"),
          getenv("DB_NAME")
     )
+
 """initializing database"""
 db = SQLAlchemy(app)
 
