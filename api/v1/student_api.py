@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
+from flask_cors import CORS
 from os import getenv
 from dotenv import load_dotenv
 """My Flask App"""
@@ -15,7 +16,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://{}:{}@{}/{}'.format(
          getenv("DB_HOST"),
          getenv("DB_NAME")
     )
-
+CORS(app)
 """initializing database"""
 db = SQLAlchemy(app)
 
@@ -64,6 +65,21 @@ def get_courses():
         }
         output.append(course_data)
     return jsonify({'courses': output})
+
+from flask import jsonify
+
+@app.route('/courses/<int:course_id>', methods=['GET'])
+def get_course(course_id):
+    course = Course.query.get(course_id)
+    if course:
+        course_data = {
+            'id': course.id,
+            'course_name': course.course_name
+        }
+        return jsonify(course_data)
+    else:
+        return jsonify({'error': 'Course not found'}), 404
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

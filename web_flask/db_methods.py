@@ -19,18 +19,18 @@ def add_course(course_name):
 
 if __name__ == "__main__":
     with app.app_context():
-        n = 0
-        while n < 50:
-            add_student(f_name=f'first_student{n}', l_name='als_student'+f'{n}', email='email'+f'{n}'+'@gmail.com', phone=f'+25078000{n}')
-            n += 1
+        # n = 0
+        # while n < 50:
+        #     add_student(f_name=f'first_student{n}', l_name='als_student'+f'{n}', email='email'+f'{n}'+'@gmail.com', phone=f'+25078000{n}')
+        #     n += 1
             
-        # courses = [
-        #     'Software engineering',
-        #     'Data science',
-        #     'Data analytics',
-        #     'Aws cloud computing',
-        #     'Salesforce administration',
-        #     'Ai career essential'
-        #     ]
-        # for course in courses:
-        #     add_course(course)
+        courses = [
+            'Software engineering',
+            'Data science',
+            'Data analytics',
+            'Aws cloud computing',
+            'Salesforce administration',
+            'Ai career essential'
+            ]
+        for course in courses:
+            add_course(course)

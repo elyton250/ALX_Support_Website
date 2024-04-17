@@ -5,8 +5,91 @@
         <i class="uil uil-search"></i>
         <span class="text">Find My Peer</span>
     </div>
-    <!-- Elyse code zawe zirajya aha -->
-    
+    <div class="search-bar">
+        <input type="text" id="cohort" placeholder="Search by Cohort">
+        <button type="button" id="goButton">Go</button>
+    </div>
+    <!--result part-->
+    <div id="results-container"></div>
 </div>
-<!-- nukenera gukoresha js, script tag uyishyire aha. -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cohort = document.querySelector('#cohort');
+        const goButton = document.querySelector('#goButton');
+        goButton.addEventListener('click', fetchData);
+
+        function fetchData() {
+            const cohortValue = parseInt(cohort.value);
+            console.log('about to fetch');
+            const url = 'http://127.0.0.1:5000/students';
+            fetch(url)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('API request failed');
+                    }
+                })
+                .then(data => {
+                    const studentData = data.students;
+                    if (Array.isArray(studentData)) {
+                        document.querySelector('#results-container').innerHTML = '';
+                        studentData.forEach(student => {
+                            if (student.cohort === cohortValue) {
+                                const course_id = student.course_id;
+                                const courseUrl = `http://127.0.0.1:5000/courses/${course_id}`;
+                                fetch(courseUrl)
+                                    .then(result => {
+                                        if (result.ok) {
+                                            return result.json();
+                                        } else {
+                                            throw new Error('API request failed');
+                                        }
+                                    })
+                                    .then(courseData => {
+                                        const courseName = courseData.course_name;
+                                        displayStudent(student, courseName);
+                                    })
+                                    .catch(error => {
+                                        console.log('Error fetching course:', error);
+                                    });
+                            } else {
+                                // alert("The cohort entered does not exist.")
+                                // return;
+                            }
+                        });
+                    } else {
+                        console.log('Invalid data format:', data);
+                    }
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                });
+        }
+
+        function displayStudent(student, courseName) {
+            const resultContainer = document.querySelector('#results-container');
+            const studentDiv = document.createElement('div');
+            studentDiv.classList.add('search-result', 'new-job');
+            studentDiv.innerHTML = `
+                <div class="badge">Cohort: ${student.cohort}</div>
+                <div class="icon">
+                    <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/3ae383bdcc8889a88908f3f03037b753" width="60" />
+                </div>
+                <div class="content">
+                    <h2><a href="/viewjob/1234">${student.first_name} ${student.last_name}</a></h2>
+                    <p>
+                        <span class="company"><a href="/job/1234">${courseName}</a></span>
+                    </p>
+                    <div class="more">
+                        <div class="close">x</div>
+                        <li>Email: <a href="/jobs/1234">${student.email}</a>
+                        <li>Phone: <a href="/salary/1234">${student.phone}</a></li>
+                    </div>
+                </div>
+            `;
+            resultContainer.appendChild(studentDiv);
+        }
+    });
+</script>
 {% endblock %}

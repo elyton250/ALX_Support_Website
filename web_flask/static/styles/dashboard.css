@@ -376,6 +376,132 @@ nav.close ~ .dashboard .top{
     width: 100%;
     height: auto;
 }
+/*find peer.css*/
+/*search bar css*/
+.search-bar {
+    margin-bottom: 20px;
+    width: 300px;
+    height: 40px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 85%;
+    height: 30px;
+    font-size: 18px;
+}
+
+.search-bar button {
+    color: #fff;
+    width: 50px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: #007BFF;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: rgb(192, 199, 212);
+    cursor: pointer;
+  }
+
+.search-result {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  position: relative;
+  
+  &.new-job {
+    border-left: 5px solid rgb(253, 137, 37);
+ 
+    .badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 5px 10px;
+      border-radius: 15px;
+      border: 2px solid rgb(253, 137, 37);
+      background-color: rgba(253, 137, 37, 0.2);
+      color: rgb(253, 137, 37);
+    }    
+  }
+  
+  h2 {
+    color: rgb(40, 140, 252)  
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(36, 138, 250)  
+  }
+
+  .icon {
+    margin: 0 15px 0 0;
+  }
+
+  .reviews {
+    color: rgb(253, 137, 37);
+  }
+  
+  .actions {
+    color: rgb(192, 199, 212);
+    margin-top: 10px;    
+    font-size: 90%;
+  }
+
+  span {
+    margin-right: 10px;
+  }
+
+  div > div p {
+    color: rgb(192, 199, 212);
+    margin-top: 10px;
+  }
+  
+  .company, .stars, .reviews {
+    font-size: 110%; 
+    margin-right: 0 !important;
+    margin-top: 5px !important;
+  }
+  
+  .stars {
+    position: relative;
+    display: inline-block;
+    height: 16px;
+    width: 86px;
+    background: url(https://www.indeed.com/cmp/_s/s/40b77a6/5stars_lg.png) 0px 33px;
+    background-size: 85px 32px;
+  }
+  
+  .stars-inner {
+    display: inline-block;
+    height: 16px;
+    width: 86px;
+    background: url(https://www.indeed.com/cmp/_s/s/40b77a6/5stars_lg.png) 0 17px;
+    background-size: 85px 32px;
+  }
+}
+
+/*find peer ends here
 
 @media (max-width: 1000px) {
     /* wifi.html css */
@@ -430,7 +556,7 @@ nav.close ~ .dashboard .top{
     .activity .activity-data{
         overflow-X: scroll;
     }
-}
+
 
 @media (max-width: 780px) {
     .dash-content .boxes .box{
