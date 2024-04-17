@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALX Kigali</title>
+    <link rel="stylesheet" href="../static/styles/index.css">
+</head>
+
+<body>
+    <section class="hero">
+
+        <div class="hero-head">
+            <div class="navbar-end">
+                <a href="{{ url_for('main.home') }}" class="navbar-item">
+                    Home
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-body">
+            <div class="container">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

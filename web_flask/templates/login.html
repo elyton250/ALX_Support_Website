@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="column">
+    <h3 class="title">Login</h3>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0] }}
+    </div>
+    {% endif %}
+    {% endwith %}
+    <form method="POST" action="/login">
+
+        <input type="email" name="email" placeholder="Your Email" autofocus=""><br><br>
+
+        <input type="password" name="password" placeholder="Your Password"><br><br>
+
+        <div class="field">
+            <label class="checkbox">
+                <input type="checkbox" name="remember">
+                Remember me
+            </label>
+        </div><br>
+
+        <input class="submit-btn" type="submit" value="Login">
+    </form>
+    <p>
+        Don't have an account? <a href="{{ url_for('auth.register') }}" class="navbar-item">
+            Sign Up
+        </a>
+    </p>
+
+</div>
+{% endblock %}

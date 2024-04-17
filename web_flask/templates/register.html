@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="column">
+    <h3 class="title">Sign Up</h3>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0]|safe }}<a href="{{ url_for('auth.login') }}"></a>
+    </div>
+    {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <input type="email" name="email" placeholder="Your Email" autofocus="" required><br><br>
+
+        <input type="password" name="password" placeholder="Your Password" required><br><br>
+
+        <input type="password"  name="re-password" placeholder="Re-Type Your Password" required><br><br>
+
+        <input type="submit" value="Sign Up">
+    </form>
+    <p>
+        Have an account? <a href="{{ url_for('auth.login') }}" class="navbar-item">
+            Login
+        </a>
+    </p>
+</div>
+{% endblock %}

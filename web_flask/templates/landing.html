@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../static/styles/landing.css">
+    <!--this for the footer-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>ALX Kigali</title>
+</head>
+<body>
+    <!--html for the nav bar-->
+    <header id="header">
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#footer">About us</a></li>
+                <li><a href="#services">Our services</a></li>
+                <li><a href="#footer">Contact us</a></li>
+            </ul>
+        </nav>
+        <!--html for the header section-->
+        <section class="header-css">
+            <video autoplay loop muted class="background-video">
+                <source src="../static/video/THE SUCCESS THAT IS ALX RWANDA!.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div>
+                <img src="../static/images/logo.png" alt="">
+                <h1>Kigali Hub Support Website</h1>
+                <p><h3>Seamless access to activities and information from ALX Kigali hub.</h3></p>
+            </div>
+            <div class="get-started">
+                <a href="http://127.0.0.1:8000/login" class="button">Get Started</a>
+            </div>
+        </section>
+    </header>
+    <!--html for the service section-->
+    <!--html for the cards-->
+    <section class="background" id="services">
+      <div class="card-list">
+          <a href="#header" class="card-item">
+              <img src="../static/images/attendance.jpg" alt="Card Image">
+              <span class="editor">Attendance</span>
+              <h3>Confirm your attendance easly.</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+          <a href="#header" class="card-item">
+              <img src="../static/images/find peer.jpg" alt="Card Image">
+              <span class="editor">Find my peer</span>
+              <h3>Seamlessly find peers in your cohort for help.</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+          <a href="#header" class="card-item">
+              <img src="../static/images/offense.jpg" alt="Card Image">
+              <span class="editor">Report offence</span>
+              <h3>Report any misconduct if any?</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+          <a href="#header" class="card-item">
+              <img src="../static/images/Pr_support.jpg" alt="Card Image">
+              <span class="editor">Program support</span>
+              <h3>Receive support from our staff.</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+          <a href="#header" class="card-item">
+              <img src="../static/images/room.jpg" alt="Card Image">
+              <span class="editor">Meeting room booking</span>
+              <h3>Book a room for meeting.</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+          <a href="#header" class="card-item">
+              <img src="../static/images/wifi_login.jpg" alt="Card Image">
+              <span class="editor">Wifi Login</span>
+              <h3>Easly login to our wifi.</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
+          </a>
+      </div>
+  </section>
+
+    <!--TODO: this is for the meet the team-->
+    
+    <!--footer begins-->
+    <footer id="footer">
+      <div class="main-content">
+        <div class="left box">
+          <h2>About us</h2>
+          <div class="content">
+            <p>
+              Welcome to the ALX Kigali Hub Support Website! This platform is designed to empower ALX students who utilize our Kigali hub by providing them with easy access to a wealth of information, updates, events, and activities happening at the hub. 
+
+              But that's not all! We also aim to support our students by offering them essential links to various platforms. Whether you need program support or wish to report an offence, we've got you covered. 
+              
+              Join us in making the most of your ALX experience. Explore, engage, and excel with the ALX Kigali Hub Support Website! 😊
+            </p>
+            <div class="social">
+              <a href="https://www.facebook.com/alxafrica/"><span class="fab fa-facebook-f"></span></a>
+              <a href="https://twitter.com/alx_africa"><span class="fab fa-twitter"></span></a>
+              <a href="https://www.instagram.com/alx_africa/"><span class="fab fa-instagram"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="center box">
+          <h2>Address</h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text">Deco Center, KG 9 Ave, Kigali, Rwanda</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">+250781 844 106</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">kigali@theroom.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="right box">
+          <h2>Contact us</h2>
+          <div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text">Email *</div>
+                <input type="email" required>
+              </div>
+              <div class="msg">
+                <div class="text">Message *</div>
+                <textarea rows="2" cols="25" required></textarea>
+              </div>
+              <div class="btn">
+                <button type="submit">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <center>
+          <span class="credit">Created By <a href="https://github.com/elyton250/ALX_Support_Website">Nguweneza Christian & Elyse Mathieu Nshimyumukiza</a> | </span>
+          <span class="far fa-copyright"></span><span> 2024 All rights reserved.</span>
+        </center>
+      </div>
+    </footer>
+</body>
+<script>
+</script>
+</html>
