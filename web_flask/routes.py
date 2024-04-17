@@ -44,7 +44,7 @@ def find_peer():
 @main.route('/wifi', strict_slashes=False)
 @login_required
 def wifi():
-    return render_template('wifi.html', name=current_user.l_name)
+    return render_template('wifi.html')
 
 @auth.route('/login', strict_slashes=False)
 def login():
