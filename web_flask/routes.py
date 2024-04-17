@@ -36,10 +36,10 @@ def profile():
 def dashboard():
     return render_template('dashboard.html', name=current_user.l_name)
 # new routes I added
-@main.route('/find-peer', strict_slashes=False)
+@main.route('/findpeer', strict_slashes=False)
 @login_required
 def find_peer():
-    return render_template('find-peer.html', name=current_user.l_name)
+    return render_template('findpeer.html')
 
 @main.route('/wifi', strict_slashes=False)
 @login_required

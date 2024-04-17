@@ -20,22 +20,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://{}:{}@{}/{}'.format(
 """initializing database"""
 db = SQLAlchemy(app)
 
-# class User(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     username = db.Column(db.String(100), nullable=False)
-#     email = db.Column(db.String(100), nullable=False, unique=True)
-#     password = db.Column(db.String(100))
-#     image_file = db.Column(db.String(50), nullable=False, default='default.png')
-#     sermons = db.relationship('Sermon', backref='author', lazy=True)
-
-# class Sermon(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     title = db.Column(db.String(100), nullable=False)
-#     verse = db.Column(db.String(50), nullable=False)
-#     audio_file = db.Column(db.String(50), nullable=False, unique=True)
-#     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow().date)
-#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
 class Student(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     f_name = db.Column(db.String(50), nullable=False)
