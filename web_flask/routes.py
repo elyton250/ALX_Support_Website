@@ -17,25 +17,18 @@ login_manager.init_app(app)
 def load_user(user_id):
     return Student.query.get(int(user_id))
 
+""" route for landing page"""
 @main.route('/', strict_slashes=False)
 def home():
     return render_template('landing.html')
 
-@main.route('/about', strict_slashes=False)
-def about():
-    return "About Us Page"
-
-@main.route('/profile', strict_slashes=False)
-@login_required
-def profile():
-    return render_template('profile.html', name=current_user.l_name)
-
-
+""" routes for dashboard """
 @main.route('/dashboard', strict_slashes=False)
 @login_required
 def dashboard():
-    return render_template('dashboard.html', name=current_user.l_name)
-# new routes I added
+    name = current_user.f_name + ' ' + current_user.l_name  
+    return render_template('dashboard.html', name=name)
+
 @main.route('/findpeer', strict_slashes=False)
 @login_required
 def find_peer():
@@ -46,6 +39,13 @@ def find_peer():
 def wifi():
     return render_template('wifi.html')
 
+@auth.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('auth.login'))
+
+"""routes for login and sign up"""
 @auth.route('/login', strict_slashes=False)
 def login():
     return render_template('login.html')
@@ -105,11 +105,6 @@ def register_post():
                 flash(f"Error registering user: {str(e)}", "error")
                 return redirect(url_for('auth.register'))
 
-@auth.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for('auth.login'))
 
 app.register_blueprint(auth)
 app.register_blueprint(main)
