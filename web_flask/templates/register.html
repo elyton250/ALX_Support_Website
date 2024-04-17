@@ -1,24 +1,27 @@
 {% extends "index.html" %}
-    {% block content %}
-    <h2>User Sign Up</h2>
+{% block content %}
+<div class="column">
+    <h3 class="title">Sign Up</h3>
     {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <div class="notification is-danger">
-                {{ messages[0]|safe }}<a href="{{ url_for('auth.login') }}"></a>
-            </div>
-        {% endif %}
+    {% if messages %}
+    <div class="notification is-danger">
+        {{ messages[0]|safe }}<a href="{{ url_for('auth.login') }}"></a>
+    </div>
+    {% endif %}
     {% endwith %}
     <form method="POST">
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+        <input type="email" name="email" placeholder="Your Email" autofocus="" required><br><br>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="password" required><br><br>
-        
-        <label for="re-password">Repeat Your Password:</label><br>
-        <input type="password" id="password" name="re-password" placeholder="re-type your password" required><br><br>
-        
-        <!-- <input type="submit" value="Sign Up"> -->
-        <button type="submit" class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+        <input type="password" name="password" placeholder="Your Password" required><br><br>
+
+        <input type="password"  name="re-password" placeholder="Re-Type Your Password" required><br><br>
+
+        <input type="submit" value="Sign Up">
     </form>
-    {% endblock %}
+    <p>
+        Have an account? <a href="{{ url_for('auth.login') }}" class="navbar-item">
+            Login
+        </a>
+    </p>
+</div>
+{% endblock %}
