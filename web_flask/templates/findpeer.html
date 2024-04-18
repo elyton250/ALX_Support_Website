@@ -20,7 +20,7 @@
 
         function fetchData() {
             const cohortValue = parseInt(cohort.value);
-            console.log('about to fetch');
+            // console.log('about to fetch');
             const url = 'http://127.0.0.1:5000/students';
             fetch(url)
                 .then(response => {
@@ -74,7 +74,7 @@
             studentDiv.innerHTML = `
                 <div class="badge">Cohort: ${student.cohort}</div>
                 <div class="icon">
-                    <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/3ae383bdcc8889a88908f3f03037b753" width="60" />
+                    <img src="../static/images/images.png" width="60" />
                 </div>
                 <div class="content">
                     <h2><a href="/viewjob/1234">${student.first_name} ${student.last_name}</a></h2>
