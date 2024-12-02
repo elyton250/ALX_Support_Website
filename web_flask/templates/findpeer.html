@@ -21,7 +21,7 @@
         function fetchData() {
             const cohortValue = parseInt(cohort.value);
             // console.log('about to fetch');
-            const url = 'http://127.0.0.1:5000/students';
+            const url = 'http://46.101.194.190:5000/students';
             fetch(url)
                 .then(response => {
                     if (response.ok) {
@@ -37,7 +37,7 @@
                         studentData.forEach(student => {
                             if (student.cohort === cohortValue) {
                                 const course_id = student.course_id;
-                                const courseUrl = `http://127.0.0.1:5000/courses/${course_id}`;
+                                const courseUrl = `http://46.101.194:5000/courses/${course_id}`;
                                 fetch(courseUrl)
                                     .then(result => {
                                         if (result.ok) {

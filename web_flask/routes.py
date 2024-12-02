@@ -63,7 +63,7 @@ def login_post():
 
         if not student or not check_password_hash(student.password, password):
             flash('Please check your login details and try again.')
-            return redirect(url_for('auth.login'))
+            #return redirect(url_for('auth.login'))
         login_user(student, remember=remember)
         return redirect(url_for('main.dashboard')) #changed from dashboard to profile
 
